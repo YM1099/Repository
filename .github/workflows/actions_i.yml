@@ -16,4 +16,4 @@ jobs:
     steps:
       - name: Send Request
         run: |
-          curl -sS "$API_URL"
+          curl -sS -o /dev/null "$API_URL"
