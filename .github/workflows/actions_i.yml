@@ -1,0 +1,19 @@
+name: Actions I
+
+on:
+  workflow_dispatch:
+  
+  schedule:
+    - cron: '0,30 * * * *'
+
+jobs:
+  send-request:
+    runs-on: ubuntu-latest
+
+    env:
+      API_URL: ${{ secrets.ACTIONS_I_I }}
+
+    steps:
+      - name: Send Request
+        run: |
+          curl -sS "$API_URL"
